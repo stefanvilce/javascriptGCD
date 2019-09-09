@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MateONline, numere prime, cmmdc, cmmmc</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    </style>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="cordova.js" id="xdkJScordova_"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/app_DescFactori.js"></script>   <!-- Clasa care descompune in factori numarul dat -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+    <script type="application/javascript">
+        function loading(){
+            $("#loading").fadeIn('slow');
+            $("#desc2").html('');
+            $(".rezolvare").fadeOut('fast');
+        }
+        function descompune(){            
+            loading();
+            setTimeout(function() { DescFactori.afisareRezultateHTML(); }, 900);
+            $(".rezolvare").fadeIn('slow');
+            localStorage['m'] = "local";
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="inheader">
+             <span id="ios-arrow-left" onclick="history.back(-1);">Back</span>Prime Factors
+        </div><!-- /.inheader -->
+    </header>
+    <!-- CONTENT -->
+    <content>
+        <div class="content">
+            <h1>Decompose into Prime Factors</h1>
+                    <div id="nrPrime"></div>
+                <div id="formular">
+                        <input name="numarul" id="numarul" type="text" /> 
+                            <div id="verifica" onclick="descompune();">Decompose</div> &nbsp; 
+                        <div id="loading"><img src="images/loading.gif" /></div>
+                        <div id="eroare"></div>
+                        <div class='rezolvare' id='descompunere_rezolvare'>
+                                <p id="desc1"></p>
+                                <h3 id="desc2"></h3>
+                        </div>
+                </div>
+        </div>
+    </content>
+    <!-- /CONTENT -->
+    <footer>&copy; 2015, mathematicshelp.org</footer>
+</body>
+</html>

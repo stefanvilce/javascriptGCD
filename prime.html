@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Natural Numbers. Check if the number is prime</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    </style>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="cordova.js" id="xdkJScordova_"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+    <script type="application/javascript">
+        function loading(){
+            $("#loading").fadeIn('slow');
+            $("#numarulMare").html('');
+            $("#verdictul").html('');
+            $("#divizibilprin").html('');
+            $(".citesteMaiMult").fadeOut('fast');            
+            $("#rezolvare").fadeOut('fast');
+        }
+        function nrPrim(){            
+            loading();
+            setTimeout(function() { Prime.afisareRezultateHTML(); }, 900);
+            $("#rezolvare").fadeIn('fast');
+            $(".citesteMaiMult").delay(1200).fadeIn('slow');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="inheader">
+             Prime Numbers
+        </div><!-- /.inheader -->
+        <span id="ios-arrow-left" onclick="history.back(-1);">Back</span>
+    </header>
+    <!-- CONTENT -->
+    <content>
+        <div class="content">
+           <h1>Is it prime?</h1>
+                    <div id="nrPrime"></div>
+                <div id="formular">
+                        <input name="numarul" id="numarul" type="text" /> 
+                            <div id="verifica" onclick="nrPrim();">Check!</div>                    
+                            <div id="loading"><img src="images/loading.gif" /></div>                    
+                        <div id='rezolvare'>
+                                <h1 id="numarulMare"></h1>                                
+                                <div id="eroare"></div>                            
+                                <h3 id="verdictul"></h3>
+                                <p id="divizibilprin"></p>
+                        </div>                    
+                        <div class="citesteMaiMult">
+                                <a href="definitii.html">Read more about Prime Numbers</a>
+                        </div>
+                </div>
+        </div>
+    </content>
+    <!-- /CONTENT -->
+    <footer> </footer>
+</body>
+</html>

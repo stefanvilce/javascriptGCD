@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MateONline, numere prime, cmmdc, cmmmc</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    </style>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="cordova.js" id="xdkJScordova_"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/app_DescFactori.js"></script>   <!-- Clasa care descompune in factori numarul dat -->
+    <script src="js/app_CMMDC.js"></script>
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+</head>
+
+<body>
+    <header>
+        <div class="inheader">
+             <span id="ios-arrow-left" onclick="history.back(-1);">Back</span>g.C.D.
+        </div><!-- /.inheader -->
+    </header>
+    <!-- CONTENT -->
+    <content>
+        <div class="content">
+            <h1>g.C.D.</h1>
+                    <h4 class="subtitlu">Greatest <b>Common Divisor</b></h4>
+                <div id="formular">
+                        <input name="nr1" id="nr1" type="text" pattern="[0-9]{1-7}" required /> 
+                        <input name="nr2" id="nr2" type="text" pattern="[0-9]{1-7}" required /> 
+                        <div id="verifica" onclick="CMMDC.returneaza();">Find out <b>gCD</b></div>
+                        <div id="eroare"></div>
+                        <div id="loading"><img src="images/loading.gif" /></div>
+                        <div class="rezolvare">                                
+                                <div class="explicatii">We decompose the two numbers into prime factors.</div>
+                                <div class="descompunerea">
+                                        <div class="tabelul">
+                                                <div class="randul">
+                                                        <div class="celula1" id="cel_nr1"> </div>
+                                                        <div class="celula2"> = </div>
+                                                        <div class="celula3" id="cel_desc1"> </div>
+                                                </div>
+                                                <div class="randul" id="ultimulrand">
+                                                        <div class="celula1" id="cel_nr2"> </div>
+                                                        <div class="celula2"> = </div>
+                                                        <div class="celula3" id="cel_desc2"> </div>
+                                                </div>
+                                        </div>
+                                        <div id="ultimulrand"> &nbsp; </div>
+                                </div><!-- /.descompunerea -->
+                                <div class="explicatii">
+                                            We choose  <span class='rr'>prime common factors</span>, just once, with the smallest <span class='rr'>power</span>.
+                                </div><!-- /.explicatii -->
+                                <div class="tabelul">
+                                        <div class="randul">
+                                                <div class="celula1" id="cel_cmmdc">g.C.D.</div>
+                                                <div class="celula2"> = </div>
+                                                <div class="celula3" id="cel_rezultat"></div>
+                                        </div>
+                                        <div class="randul">
+                                                <div class="celula1" id="cel_cmmdc"> &nbsp; </div>
+                                                <div class="celula2"> = </div>
+                                                <div class="celula3" id="cel_rezultatfinal"></div>
+                                        </div>
+                                </div>                            
+                                <div id='afisareExplicatii' onclick="CMMDC.afisareExplicatii();">See the explanations</div>
+                                <div id="test1"></div>
+                                <div id="test2"></div>
+                        </div><!-- /.rezolvare -->
+                </div>
+        </div>
+    </content>
+    <!-- /CONTENT -->
+    <footer>&copy; 2015, mathematicshelp.org</footer>
+</body>
+</html>
