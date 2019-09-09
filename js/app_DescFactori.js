@@ -40,7 +40,7 @@ var DescFactori = {
     gasesteDivizorii: function(x){
             //      Functia asta gaseste divizorii acestui numar
             Prime.verificaNrPrim(x);
-            if(Prime.estePrim == "Da"){
+            if(Prime.isPrim == "Yes"){
                 // daca este prim, aici se termina partea asta cu  impartirea
                 // dar trebui e sa verific daca este din prima prim sau este ultima lui impartire
                 if(this.prevDivizor == 1){
