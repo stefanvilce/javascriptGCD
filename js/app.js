@@ -46,8 +46,8 @@ var Prime = {
                 }            
                 i = i + 1;  // going to the next prime number from array                
         }   //while
-        this.estePrim = estePrim;
-        return estePrim;
+        this.isPrim = isPrim;
+        return isPrim;
     },
     
     listaNumerePrime: function(){
