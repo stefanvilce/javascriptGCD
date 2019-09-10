@@ -61,7 +61,7 @@ var Prime = {
                     var t = 2*i;
                     var numarul = p + t;
                     var c = this.verificaNr(numarul);
-                    if(c == "Da"){
+                    if(c == "Yes"){
                         this.nrprime.push(numarul);
                     }
                 }
@@ -70,8 +70,7 @@ var Prime = {
                 localStorage.setItem("nrprime", JSON.stringify(nPrimeSt));
         } else {                
                 this.nrprime.length = 0;
-                var nrPrime  = JSON.parse(localStorage.getItem("nrprime"));     // copy array of prime numbers
-                this.nrprime = nrPrime;               
+                this.nrprime  = JSON.parse(localStorage.getItem("nrprime"));     // copy array of prime numbers
         }
         this.divizorul = 1;        
     },
@@ -88,8 +87,8 @@ var Prime = {
             document.getElementById("eroare").innerHTML = "";
             document.getElementById("verdictul").innerHTML = "";
             document.getElementById("divizibilprin").innerHTML = "";            
-        if(IsNumeric(x)){       //checking if the input is numeric
-                    if(x>2 && x<10000){                                                        
+            if(IsNumeric(x)){       //checking if the input is numeric
+                    if(x>2){                                                        
                             document.getElementById("numarulMare").innerHTML = numberWithCommas(x);
                             this.verificaNrPrim(x);                            
                             if(this.isPrim == "Yes"){
@@ -100,12 +99,11 @@ var Prime = {
                                 document.getElementById("divizibilprin").innerHTML = "One of its divisors is " + this.divizorul;
                             }
                     } else {
-                            document.getElementById("eroare").innerHTML = "<div class='eroare'>" + this.mesajEroareLimitare + "</div>";
+                            document.getElementById("eroare").innerHTML = "<div class='eroare'>" + this.mesajEroare + "</div>";
                     }
             } else {
                             document.getElementById("eroare").innerHTML = "<div class='eroare'>" + this.mesajEroare + "</div>";
             }
-
          $(".citesteMaiMult").fadeIn('slow');
          $("#loading").fadeOut('slow');
     },        
